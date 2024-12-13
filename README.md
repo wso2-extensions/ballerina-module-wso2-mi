@@ -31,7 +31,7 @@ public function gpa(xml rawMarks, xml credits) returns xml {
 }
 ```
 
-Ballerina function that contains `@mi:Operation` annotation maps with an operation in the Ballerina connector.
+Ballerina function that contains `@mi:Operation` annotation maps with an operation in the Ballerina module.
 
 ### Generate the module
 
