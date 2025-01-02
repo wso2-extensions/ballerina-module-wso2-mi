@@ -51,7 +51,7 @@ public class AnnotationTest {
 
     private final Gson GSON = new Gson();
     private final Path RESOURCE_PATH = Paths.get("src", "test", "resources", "ballerina", "annotation_code_action");
-    private final String PROVIDER_NAME = "MI_HINT_001/ballerinax/mi/Add MI annotation";
+    private final String PROVIDER_NAME = "MI_HINT_001/wso2/mi/Add MI annotation";
     private Project project;
     private Path filePath;
     private Project projectNeg;

@@ -40,7 +40,7 @@ import static io.ballerina.stdlib.mi.plugin.MICompilerPluginUtils.getReturnTypeN
 
 public class FunctionAnalysisTask implements AnalysisTask<SyntaxNodeAnalysisContext> {
 
-    private final String ANNOTATION_NAME = "ConnectorInfo";
+    private final String ANNOTATION_NAME = "Operation";
 
     @Override
     public void perform(SyntaxNodeAnalysisContext context) {

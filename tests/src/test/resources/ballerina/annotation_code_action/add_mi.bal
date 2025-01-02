@@ -14,7 +14,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
-import ballerinax/mi;
+import wso2/mi;
 
 public function f1(xml b, boolean c, json w) {
 
@@ -28,7 +28,7 @@ public function f8(int a) returns xml {
     return xml ``;
 }
 
-@mi:ConnectorInfo
+@mi:Operation
 public function f12(int a) returns xml {
     return xml ``;
 }
