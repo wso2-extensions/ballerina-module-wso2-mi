@@ -14,7 +14,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
-import ballerinax/mi;
+import wso2/mi;
 
 type Patient record {
     string patientType;
@@ -63,7 +63,7 @@ type ResponseResource record {
     string version;
 };
 
-@mi:ConnectorInfo
+@mi:Operation
 public function mapPatient(json payload) returns json {
     Patient|error patient = payload.cloneWithType();
     if patient is error {
