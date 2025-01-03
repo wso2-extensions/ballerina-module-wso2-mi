@@ -26,14 +26,13 @@ public enum DiagnosticCode {
     UNSUPPORTED_PARAM_TYPE("MIE001", "unsupported parameter type found", ERROR),
     UNSUPPORTED_RETURN_TYPE("MIE002", "unsupported return type found", ERROR),
     SERVICE_DEF_NOT_ALLOWED("MIE003",
-            "service definition is not allowed when `ballerinax/mi` connector is in use", ERROR),
-    LISTENER_DECLARATION_NOT_ALLOWED("MIE004",
-            "listener declaration is not allowed when `ballerinax/mi` connector is in use", ERROR),
+            "service definition is not allowed when `wso2/mi` connector is in use", ERROR),
+            LISTENER_DECLARATION_NOT_ALLOWED("MIE004",
+            "listener declaration is not allowed when `wso2/mi` connector is in use", ERROR),
     LISTENER_SHAPE_VAR_NOT_ALLOWED("MIE005",
-            "defining variables with a type that has the shape of `Listener` is not allowed when the `ballerinax/mi` " +
+            "defining variables with a type that has the shape of `Listener` is not allowed when the `wso2/mi` " +
                     "connector is in use.", ERROR),
-    MI_ANNOTATION_ADD("MI_HINT_001", "MI Annotation can be added", INTERNAL)
-    ;
+    MI_ANNOTATION_ADD("MI_HINT_001", "MI Annotation can be added", INTERNAL);
 
     private final String diagnosticId;
     private final String message;

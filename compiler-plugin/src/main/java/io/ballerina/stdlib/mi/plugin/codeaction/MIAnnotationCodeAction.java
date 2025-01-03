@@ -51,7 +51,7 @@ public class MIAnnotationCodeAction implements CodeAction {
 
     private final String NAME = "Add MI annotation";
     private final String NODE_LOCATION_KEY = "node.location";
-    private final String ANNOTATION_STRING = "@mi:ConnectorInfo\n";
+    private final String ANNOTATION_STRING = "@mi:Operation\n";
 
     @Override
     public String name() {

@@ -14,14 +14,14 @@
 // specific language governing permissions and limitations
 // under the License.
 
-import ballerinax/mi;
+import wso2/mi;
 
 public type Rec record {|
     string a;
     int b;
 |};
 
-@mi:ConnectorInfo
+@mi:Operation
 public function f3(int a) {
 
 }

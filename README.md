@@ -25,13 +25,13 @@ Create a new Ballerina project or use an existing one and write your transformat
 For example,
 
 ```
-@mi:ConnectorInfo {}
+@mi:Operation {}
 public function gpa(xml rawMarks, xml credits) returns xml {
    // Your logic to calculate the GPA
 }
 ```
 
-Ballerina function that contains `@mi:ConnectorInfo` annotation maps with an operation in the Ballerina connector.
+Ballerina function that contains `@mi:Operation` annotation maps with an operation in the Ballerina module.
 
 ### Generate the module
 
