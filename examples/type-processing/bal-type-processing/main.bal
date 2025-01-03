@@ -1,12 +1,12 @@
-import ballerinax/mi;
+import wso2/mi;
 
-@mi:ConnectorInfo
+@mi:Operation
 public function invertBoolean(boolean b) returns boolean => !b;
 
-@mi:ConnectorInfo
+@mi:Operation
 public function doubleInt(int n) returns int => n * 2;
 
-@mi:ConnectorInfo
+@mi:Operation
 public function reciprocalFloat(float f) returns float {
     if f == 0.0 {
         return 1;
@@ -14,13 +14,13 @@ public function reciprocalFloat(float f) returns float {
     return 1.0 / f;
 }
 
-@mi:ConnectorInfo
+@mi:Operation
 public function addConstantToDecimal(decimal d) returns decimal => d + 10;
 
-@mi:ConnectorInfo
+@mi:Operation
 public function doubleString(string s) returns string => s + s;
 
-@mi:ConnectorInfo
+@mi:Operation
 public function getJsonNameProperty(json j) returns json {
     json jsn = j;
     if jsn is string {
@@ -37,7 +37,7 @@ public function getJsonNameProperty(json j) returns json {
     return {val};
 }
 
-@mi:ConnectorInfo
+@mi:Operation
 public function getXmlNameElement(xml x) returns xml {
     xml y = x/<name>;
     return xml `<result>${y}</result>`;
