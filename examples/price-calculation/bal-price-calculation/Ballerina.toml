@@ -1,5 +1,5 @@
 [package]
-org = "bal_mi"
+org = "miSdk"
 name = "bal_price_calculation"
 version = "0.1.0"
 distribution = "2201.10.1"
