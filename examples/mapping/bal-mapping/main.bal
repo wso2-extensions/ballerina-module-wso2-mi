@@ -67,7 +67,7 @@ type ResponseResource record {
 public function mapPatient(json payload) returns json {
     Patient|error patient = payload.cloneWithType();
     if patient is error {
-        return "";
+        return "Could not convert json payload to `Patient` record type";
     }
     return {
         name: [

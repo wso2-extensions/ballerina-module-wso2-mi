@@ -15,7 +15,7 @@ Follow these steps to invoke the sample using the module:
 
 2. A ZIP file of the module will be generated. Add this ZIP file to the MI project inside the folder `mi-mapping` following the approach described [here](https://mi.docs.wso2.com/en/latest/develop/creating-artifacts/adding-connectors/).
 
-3. Once the module is added, run the MI project.
+3. Once the module is added, run the MI project. The `public` Ballerina functions in the Ballerina project are exposed through the module and utilized in the MI project.
 
 4. Send an HTTP POST request to the following resource with a payload as specified:
 

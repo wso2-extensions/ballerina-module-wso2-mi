@@ -1,5 +1,5 @@
 [package]
-org = "testOrg"
+org = "miSdk"
 name = "bal_mapping"
 version = "0.1.0"
 distribution = "2201.9.2"
