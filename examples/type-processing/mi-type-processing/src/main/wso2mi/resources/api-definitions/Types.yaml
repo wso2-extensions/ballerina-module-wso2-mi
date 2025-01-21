@@ -1,10 +1,10 @@
 openapi: 3.0.1
 info:
-  title: TypeProcessing
-  description: API Definition of TypeProcessing
+  title: Types
+  description: API Definition of Types
   version: 1.0.0
 servers:
-- url: http://localhost:8290/type-processing
+- url: http://localhost:8290/types
 paths:
   /:
     post:

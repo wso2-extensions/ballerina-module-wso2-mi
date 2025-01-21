@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<api context="/type-processing" name="TypeProcessing" xmlns="http://ws.apache.org/ns/synapse">
+<api context="/types" name="Types" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="POST" uri-template="/">
         <inSequence>
             <property name="type" expression="json-eval($.type)" scope="default" type="STRING" />

@@ -39,7 +39,7 @@ Follow these steps to invoke the sample using the module:
 4. Send an HTTP POST request to the following resource with a payload as specified:
 
    ```bash
-   curl --location 'http://localhost:8290/type-processing' \
+   curl --location 'http://localhost:8290/types' \
    --header 'Content-Type: application/json' \
    --data '{
       "type": "decimal",
