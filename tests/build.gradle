@@ -21,6 +21,7 @@ dependencies {
 }
 
 test {
+    systemProperty "ballerina.home", "${project.rootDir}/target/ballerina-runtime"
     useTestNG() {
         suites 'src/test/resources/testng.xml'
     }
