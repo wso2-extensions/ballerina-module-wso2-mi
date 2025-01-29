@@ -41,7 +41,7 @@ import static io.ballerina.stdlib.mi.plugin.DiagnosticCode.UNSUPPORTED_RETURN_TY
 
 public class AnnotationAnalysisTask implements AnalysisTask<SyntaxNodeAnalysisContext> {
 
-    private static final String ANNOTATION_QUALIFIER = "ConnectorInfo";
+    private static final String ANNOTATION_QUALIFIER = "Operation";
 
     private static void checkParametersAndReturnType(SyntaxNodeAnalysisContext context, FunctionSymbol functionSymbol) {
         Optional<List<ParameterSymbol>> params = functionSymbol.typeDescriptor().params();
