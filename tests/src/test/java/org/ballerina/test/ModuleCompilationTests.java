@@ -35,7 +35,7 @@ import java.nio.file.Paths;
 /**
  * Perform module compilation related tests.
  *
- * @since 0.1.3
+ * @since 0.1.0
  */
 public class ModuleCompilationTests {
 
