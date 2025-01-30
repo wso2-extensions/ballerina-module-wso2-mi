@@ -41,7 +41,7 @@ import java.util.Optional;
  * Analysis task that emits error diagnostics for local and module-level variable declarations with a type that match
  * the shape of the `Listener` type found in the code.
  *
- * @since 0.1.3
+ * @since 0.1.0
  */
 public class VariableDeclarationAnalysisTask implements AnalysisTask<SyntaxNodeAnalysisContext> {
 
