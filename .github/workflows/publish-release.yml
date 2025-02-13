@@ -47,10 +47,12 @@ jobs:
           packageUser: ${{ secrets.BALLERINA_BOT_USERNAME }}
           packagePAT: ${{ secrets.BALLERINA_BOT_TOKEN }}
         run: |
-          ./gradlew release
+          ./gradlew clean release -Prelease.useAutomaticVersion=true
+          ./gradlew -Pversion=${VERSION} publish -x test -PpublishToCentral=true
 
       - name: GitHub Release and Release Sync PR
         env:
           GITHUB_TOKEN: ${{ secrets.BALLERINA_BOT_TOKEN }}
         run: |
           gh release create v$VERSION --title "mi-tools-v$VERSION"
+          gh pr create --base main --title "[Automated] Sync main after $VERSION release" --body "Sync main after $VERSION release"
