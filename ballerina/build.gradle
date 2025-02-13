@@ -103,7 +103,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/ballerina-platform/module-${packageOrg}-${packageName}")
+            url = uri("https://maven.pkg.github.com/wso2-extensions/module-${packageOrg}-${packageName}")
             credentials {
                 username = System.getenv("publishUser")
                 password = System.getenv("publishPAT")
