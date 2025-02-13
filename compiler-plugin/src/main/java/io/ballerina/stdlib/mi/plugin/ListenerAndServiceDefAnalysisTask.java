@@ -29,7 +29,7 @@ import io.ballerina.tools.diagnostics.DiagnosticSeverity;
 /**
  *  Analysis task that emit error diagnostic for service and listener declarations found in the code.
  *
- * @since 0.1.0
+ * @since 0.2.0
  */
 public class ListenerAndServiceDefAnalysisTask implements AnalysisTask<SyntaxNodeAnalysisContext> {
 
