@@ -2,13 +2,7 @@
 org = "testOrg"
 name = "annotation_code_action"
 version = "0.2.0"
-distribution = "2201.9.2"
+distribution = "2201.11.0"
 
 [build-options]
 observabilityIncluded = true
-
-[[dependency]]
-org = "wso2"
-name = "mi"
-version = "0.2.0"
-repository = "local"
