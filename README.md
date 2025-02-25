@@ -18,13 +18,21 @@ First, you need to pull the `mi-module-gen` tool which is used to create the WSO
 bal tool pull mi-module-gen
 ```
 
+### Import the `wso2/mi` module
+
+Create a new Ballerina project or use an existing one and write your transformation logic.
+Import the module `wso2/mi` in your Ballerina program.
+
+```ballerina
+import wso2/mi;
+```
+
 ### Write Ballerina Transformation
 
 Next, you need to write the Ballerina transformation in a Ballerina project.
-Create a new Ballerina project or use an existing one and write your transformation logic.
 For example,
 
-```
+```ballerina
 @mi:Operation {}
 public function gpa(xml rawMarks, xml credits) returns xml {
    // Your logic to calculate the GPA
