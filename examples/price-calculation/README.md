@@ -27,7 +27,7 @@ Follow these steps to invoke the sample using the module:
 1. The `bal-price-calculation` folder contains the Ballerina code for the module. Invoke the following command to generate the module:
 
     ```bash
-    bal mi-module-gen bal-price-calculation
+    bal mi-module-gen -i bal-price-calculation
     ```
 
 2. A ZIP file of the module will be generated. Add this ZIP file to the MI project inside the folder `mi-price-calculation` following the approach described [here](https://mi.docs.wso2.com/en/latest/develop/creating-artifacts/adding-connectors/).

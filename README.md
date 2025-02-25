@@ -38,7 +38,7 @@ Ballerina function that contains `@mi:Operation` annotation maps with an operati
 Finally, use the `bal mi-module-gen` command to generate the WSO2 Micro Integrator module from Ballerina project.
 
 ```bash
-bal mi-module-gen <path_to_ballerina_project>
+bal mi-module-gen -i <path_to_ballerina_project>
 ```
 
 Above command generates the module zip in the same location.

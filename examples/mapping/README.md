@@ -10,7 +10,7 @@ Follow these steps to invoke the sample using the module:
 1. The `bal-mapping` folder contains the Ballerina code for the module. Invoke the following command to generate the module:
 
     ```bash
-    bal mi-module-gen <ballerina-project>
+    bal mi-module-gen -i <ballerina-project>
     ```
 
 2. A ZIP file of the module will be generated. Add this ZIP file to the MI project inside the folder `mi-mapping` following the approach described [here](https://mi.docs.wso2.com/en/latest/develop/creating-artifacts/adding-connectors/).
