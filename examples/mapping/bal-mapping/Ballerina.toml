@@ -2,4 +2,4 @@
 org = "miSdk"
 name = "bal_mapping"
 version = "0.2.0"
-distribution = "2201.10.3"
+distribution = "2201.11.0"
