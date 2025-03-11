@@ -1,16 +1,23 @@
-# WSO2 Micro Integrator Module Generator SDK for Ballerina
+# WSO2 Micro Integrator module generator SDK for Ballerina
 
 ## Overview
 
-The WSO2 Micro Integrator Module Generator SDK for Ballerina enables the generation of modules that allow the WSO2 MI to run Ballerina transformations.
+The WSO2 Micro Integrator module generator SDK for Ballerina enables the generation of modules that allow the WSO2 MI to run Ballerina transformations.
 This integration enables you to leverage the powerful transformation capabilities of Ballerina within
 the environment of WSO2 Micro Integrator. Unlike Class Mediators, Ballerina is a cloud-native programming language with 
 built-in support for JSON and XML, making data transformations simpler. It also allows the use of available Ballerina language 
 modules and connectors, enabling enhanced functionality and easier connectivity with external systems.
 
-## Steps to Create Module for WSO2 MI from Ballerina
+**Version compatibility**:
 
-### Pull `mi-module-gen` Tool
+**`wso2/mi` Connector version**|**Tool version**|**Ballerina Version**|**Java version**|**WSO2 MI version**|
+:-----:|:-----:|:-----:|:-----:|:-----:
+0.2| 0.2| 2201.10.3| 17| 4.2.0, 4.3.0
+0.3| 0.3| 2201.11.0| 21| 4.4.0
+
+## Steps to create a module for WSO2 MI from Ballerina
+
+### Pull `mi-module-gen` tool
 
 First, you need to pull the `mi-module-gen` tool which is used to create the WSO2 MI module.
 
@@ -27,7 +34,7 @@ Import the module `wso2/mi` in your Ballerina program.
 import wso2/mi;
 ```
 
-### Write Ballerina Transformation
+### Write Ballerina transformation
 
 Next, you need to write the Ballerina transformation in a Ballerina project.
 For example,
@@ -53,7 +60,7 @@ Above command generates the module zip in the same location.
 
 To add this generated module to a WSO2 Micro Integrator project follow the instruction specified [here](https://mi.docs.wso2.com/en/latest/develop/creating-artifacts/adding-connectors/).
 
-## Local Build
+## Local build
 
 1. Clone the repository [ballerina-module-wso2-mi](https://github.com/wso2-extensions/ballerina-module-wso2-mi.git)
 
@@ -75,7 +82,7 @@ To add this generated module to a WSO2 Micro Integrator project follow the instr
    ./gradlew test
    ```
 
-## Performance Test Description for WSO2 MI Module
+## Performance test description for WSO2 MI module
 
 ### Overview
 
@@ -95,10 +102,10 @@ The following table shows the throughput per second for each transformation meth
 | 10240B       | 1522.99                       | 1548.53                         | 12807.91            |
 | 102400B      | 118.60                        | 118.79                          | 4792.20             |
 
-### Test Code
+### Test code
 The specific code used for each transformation method is provided below:
 
-#### Ballerina JSON Transformation:
+#### Ballerina JSON transformation:
 
 ```ballerina
 function getPayloadLenFromJson(json j) returns decimal {
@@ -115,7 +122,7 @@ function getPayloadLenFromJson(json j) returns decimal {
 }
 ```
 
-#### Ballerina Record Transformation:
+#### Ballerina Record transformation:
 
 ```ballerina
 type Payload record {|
@@ -137,7 +144,7 @@ function getPayloadLenFromRecord(json j) returns decimal {
 }
 ```
 
-#### Java Class Mediator:
+#### Java Class mediator:
 
 ```Java
 import java.math.BigDecimal;
