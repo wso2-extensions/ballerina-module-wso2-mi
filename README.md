@@ -15,6 +15,34 @@ modules and connectors, enabling enhanced functionality and easier connectivity 
 0.2| 0.2| 2201.10.3| 17| 4.2.0, 4.3.0
 0.3| 0.3| 2201.11.0| 21| 4.4.0
 
+## Step-by-Step Guide to Building a WSO2 MI Module from Ballerina with WSO2 Micro Integrator VS Code Extension
+
+1. Install the [WSO2 Micro Integrator VSCode Extension](https://mi.docs.wso2.com/en/latest/develop/mi-for-vscode/install-wso2-mi-for-vscode/).
+2. [Create](https://mi.docs.wso2.com/en/latest/develop/create-integration-project/) a new integration project or open an existing project.
+3. Expand the artifact types in the `Add artifact` view and select **Ballerina Module**.
+
+![select-ballerina-module](images/ballerina-module-tile.png)
+4. In the `Create Ballerina Module` form, enter a **name** and a **version** for the module and click **Create**.
+
+![ballerina-module-creation-form](images/create-ballerina-module.png)
+5. Update the generated sample Ballerina code with your transformation logic and save the file.
+6. Click the **Build Ballerina Module** icon.
+
+![build-ballerina-icon](images/build-ballerina-module.png)
+
+_Note:
+If the Kola Extension is not installed during the build process, you will be prompted to install it. Simply click the **Install** button to install the Kola Extension, and once the installation is complete, click the **Setup Kola** button to finalize the setup._
+
+![setup-kola-extension](images/setup-kola.png)
+
+Once the Ballerina module is successfully built, it will appear in the `Mediator palette`, allowing it to be added when constructing integration flows.
+
+![mediator-palette-view](images/mediator-palette-view.png)
+
+If any changes are made to the transformation logic, the module can be rebuilt by clicking the **Build Ballerina Module** icon or by clicking the **Refresh** icon next to the relevant module in the Mediator Palette.
+
+![refresh-icon](images/refresh-module.png)
+
 ## Steps to create a module for WSO2 MI from Ballerina
 
 ### Pull `mi-module-gen` tool
