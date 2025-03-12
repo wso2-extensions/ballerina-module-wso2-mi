@@ -104,7 +104,7 @@
           <plugin>
             <groupId>org.wso2.maven</groupId>
             <artifactId>vscode-car-plugin</artifactId>
-            <version>5.2.75</version>
+            <version>5.2.100</version>
             <extensions>true</extensions>
             <executions>
               <execution>
@@ -199,7 +199,7 @@
           <plugin>
             <groupId>org.wso2.maven</groupId>
             <artifactId>vscode-car-plugin</artifactId>
-            <version>5.2.75</version>
+            <version>5.2.100</version>
             <extensions>true</extensions>
             <executions>
               <execution>
@@ -235,7 +235,7 @@
           <plugin>
             <groupId>org.wso2.maven</groupId>
             <artifactId>mi-container-config-mapper</artifactId>
-            <version>5.2.75</version>
+            <version>5.2.100</version>
             <extensions>true</extensions>
             <executions>
               <execution>
@@ -335,7 +335,7 @@
       <plugin>
         <groupId>org.wso2.maven</groupId>
         <artifactId>synapse-unit-test-maven-plugin</artifactId>
-        <version>5.2.75</version>
+        <version>5.2.100</version>
         <executions>
           <execution>
             <id>synapse-unit-test</id>
@@ -372,7 +372,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.scm.id>integration-project</project.scm.id>
-    <project.runtime.version>4.3.0</project.runtime.version>
+    <project.runtime.version>4.4.0</project.runtime.version>
     <dockerfile.base.image>wso2/wso2mi:${project.runtime.version}</dockerfile.base.image>
   </properties>
 </project>

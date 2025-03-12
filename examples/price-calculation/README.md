@@ -17,7 +17,7 @@ This calculation is done by a function implemented in Ballerina, which processes
 This would output a result in the following format.
 
 ```xml
-<total xmlns="http://ws.apache.org/ns/synapse">{total}</total>
+<total>{total}</total>
 ```
 
 ## Steps to Invoke the Sample
@@ -58,5 +58,5 @@ Follow these steps to invoke the sample using the module:
    Output:
 
    ```xml
-   <total xmlns="http://ws.apache.org/ns/synapse">217</total>
+   <total>217</total>
    ```
