@@ -17,6 +17,11 @@ paths:
               properties:
                 payload:
                   type: object
+          application/xml:
+            schema:
+              type: object
+              xml:
+                name: payload
         required: false
       responses:
         default:
