@@ -3,18 +3,16 @@
      <resource methods="POST" uri-template="/">
         <inSequence>
             <bal_price_calculation.calculateTotal>
-                <Result>total</Result>
+                <responseVariable>bal_price_calculation_calculateTotal_1</responseVariable>
+                <overwriteBody>false</overwriteBody>
                 <invoice>{$body/*}</invoice>
             </bal_price_calculation.calculateTotal>
             <payloadFactory media-type="xml" template-type="default">
                 <format>
-                    <total>$1</total>
+                    ${vars.bal_price_calculation_calculateTotal_1.payload}
                 </format>
-                <args>
-                    <arg expression="$ctx:total" evaluator="xml"/>
-                </args>
             </payloadFactory>
-            <respond/>
+            <respond />
         </inSequence>
         <faultSequence>
         </faultSequence>
