@@ -38,6 +38,8 @@ import java.util.Optional;
 
 import static io.ballerina.stdlib.mi.plugin.DiagnosticCode.UNSUPPORTED_PARAM_TYPE;
 import static io.ballerina.stdlib.mi.plugin.DiagnosticCode.UNSUPPORTED_RETURN_TYPE;
+import static io.ballerina.stdlib.mi.plugin.MICompilerPluginUtils.getParamTypeName;
+import static io.ballerina.stdlib.mi.plugin.MICompilerPluginUtils.getReturnTypeName;
 
 public class AnnotationAnalysisTask implements AnalysisTask<SyntaxNodeAnalysisContext> {
 
@@ -68,20 +70,6 @@ public class AnnotationAnalysisTask implements AnalysisTask<SyntaxNodeAnalysisCo
             context.reportDiagnostic(DiagnosticFactory.createDiagnostic(diagnosticInfo,
                     functionSymbol.getLocation().get()));
         }
-    }
-
-    private static String getParamTypeName(TypeDescKind typeKind) {
-        return switch (typeKind) {
-            case BOOLEAN, INT, STRING, FLOAT, DECIMAL, XML, JSON -> typeKind.getName();
-            default -> null;
-        };
-    }
-
-    private static String getReturnTypeName(TypeDescKind typeKind) {
-        return switch (typeKind) {
-            case NIL, BOOLEAN, INT, STRING, FLOAT, DECIMAL, XML, JSON, ANY -> typeKind.getName();
-            default -> null;
-        };
     }
 
     private static FunctionSymbol getFunctionSymbol(SyntaxNodeAnalysisContext context, SemanticModel semanticModel) {
