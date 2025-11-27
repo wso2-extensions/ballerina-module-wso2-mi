@@ -24,14 +24,14 @@ public class MICompilerPluginUtils {
 
     public static String getParamTypeName(TypeDescKind typeKind) {
         return switch (typeKind) {
-            case BOOLEAN, INT, STRING, FLOAT, DECIMAL, XML, JSON -> typeKind.getName();
+            case BOOLEAN, INT, STRING, FLOAT, DECIMAL, XML, JSON, RECORD, MAP, ARRAY -> typeKind.getName();
             default -> null;
         };
     }
 
     public static String getReturnTypeName(TypeDescKind typeKind) {
         return switch (typeKind) {
-            case NIL, BOOLEAN, INT, STRING, FLOAT, DECIMAL, XML, JSON, ANY -> typeKind.getName();
+            case NIL, BOOLEAN, INT, STRING, FLOAT, DECIMAL, XML, JSON, ANY, RECORD, MAP, ARRAY -> typeKind.getName();
             default -> null;
         };
     }
