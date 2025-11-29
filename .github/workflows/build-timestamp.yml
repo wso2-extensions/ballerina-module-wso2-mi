@@ -16,3 +16,4 @@ jobs:
     if: ${{ github.repository_owner == 'wso2-extensions' }}
     uses: ballerina-platform/ballerina-library/.github/workflows/build-timestamp-master-template.yml@main
     secrets: inherit
+    
