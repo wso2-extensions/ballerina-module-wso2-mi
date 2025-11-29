@@ -9,6 +9,6 @@ public function test(xml xmlA, xml xmlB, xml xmlC) returns xml|error {
 
 @mi:Operation {
 }
-public function test1(map<string> m) returns int {
+public function test1(error m) returns int {
     return 2;
 }

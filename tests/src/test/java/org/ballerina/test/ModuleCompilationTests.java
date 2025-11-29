@@ -59,7 +59,7 @@ public class ModuleCompilationTests {
         Assert.assertEquals(diagnosticResult.diagnosticCount(), 2);
         Diagnostic[] diagnostics = diagnosticResult.diagnostics().toArray(new Diagnostic[0]);
         validateError(diagnostics, 0, "unsupported return type found", 5, 17);
-        validateError(diagnostics, 1, "unsupported parameter type found", 12, 35);
+        validateError(diagnostics, 1, "unsupported parameter type found", 12, 29);
     }
 
     @Test

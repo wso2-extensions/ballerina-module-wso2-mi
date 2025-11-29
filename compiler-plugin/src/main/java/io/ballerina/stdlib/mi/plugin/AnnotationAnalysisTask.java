@@ -38,6 +38,8 @@ import java.util.Optional;
 
 import static io.ballerina.stdlib.mi.plugin.DiagnosticCode.UNSUPPORTED_PARAM_TYPE;
 import static io.ballerina.stdlib.mi.plugin.DiagnosticCode.UNSUPPORTED_RETURN_TYPE;
+import static io.ballerina.stdlib.mi.plugin.MICompilerPluginUtils.getParamTypeName;
+import static io.ballerina.stdlib.mi.plugin.MICompilerPluginUtils.getReturnTypeName;
 
 public class AnnotationAnalysisTask implements AnalysisTask<SyntaxNodeAnalysisContext> {
 
@@ -47,7 +49,10 @@ public class AnnotationAnalysisTask implements AnalysisTask<SyntaxNodeAnalysisCo
         Optional<List<ParameterSymbol>> params = functionSymbol.typeDescriptor().params();
         if (params.isPresent()) {
             for (ParameterSymbol parameterSymbol : params.get()) {
-                String paramType = getParamTypeName(parameterSymbol.typeDescriptor().typeKind());
+                TypeSymbol typeSymbol = parameterSymbol.typeDescriptor();
+                // Resolve type references to get the actual type
+                TypeDescKind typeKind = getActualTypeKind(typeSymbol);
+                String paramType = getParamTypeName(typeKind);
                 if (paramType == null) {
                     DiagnosticInfo diagnosticInfo = new DiagnosticInfo(UNSUPPORTED_PARAM_TYPE.diagnosticId(),
                             UNSUPPORTED_PARAM_TYPE.message(), DiagnosticSeverity.ERROR);
@@ -61,7 +66,10 @@ public class AnnotationAnalysisTask implements AnalysisTask<SyntaxNodeAnalysisCo
         if (optReturnTypeSymbol.isEmpty()) {
             return;
         }
-        String returnType = getReturnTypeName(optReturnTypeSymbol.get().typeKind());
+        TypeSymbol returnTypeSymbol = optReturnTypeSymbol.get();
+        // Resolve type references to get the actual type
+        TypeDescKind returnTypeKind = getActualTypeKind(returnTypeSymbol);
+        String returnType = getReturnTypeName(returnTypeKind);
         if (returnType == null) {
             DiagnosticInfo diagnosticInfo = new DiagnosticInfo(UNSUPPORTED_RETURN_TYPE.diagnosticId(),
                     UNSUPPORTED_RETURN_TYPE.message(), DiagnosticSeverity.ERROR);
@@ -69,19 +77,20 @@ public class AnnotationAnalysisTask implements AnalysisTask<SyntaxNodeAnalysisCo
                     functionSymbol.getLocation().get()));
         }
     }
-
-    private static String getParamTypeName(TypeDescKind typeKind) {
-        return switch (typeKind) {
-            case BOOLEAN, INT, STRING, FLOAT, DECIMAL, XML, JSON -> typeKind.getName();
-            default -> null;
-        };
-    }
-
-    private static String getReturnTypeName(TypeDescKind typeKind) {
-        return switch (typeKind) {
-            case NIL, BOOLEAN, INT, STRING, FLOAT, DECIMAL, XML, JSON, ANY -> typeKind.getName();
-            default -> null;
-        };
+    
+    /**
+     * Get the actual TypeDescKind by resolving type references.
+     * For example, if Employee is a record type, TYPE_REFERENCE will be resolved to RECORD.
+     */
+    private static TypeDescKind getActualTypeKind(TypeSymbol typeSymbol) {
+        TypeDescKind typeKind = typeSymbol.typeKind();
+        // If it's a type reference, resolve it to get the actual type recursively
+        if (typeKind == TypeDescKind.TYPE_REFERENCE) {
+            if (typeSymbol instanceof io.ballerina.compiler.api.symbols.TypeReferenceTypeSymbol typeRef) {
+                return getActualTypeKind(typeRef.typeDescriptor());
+            }
+        }
+        return typeKind;
     }
 
     private static FunctionSymbol getFunctionSymbol(SyntaxNodeAnalysisContext context, SemanticModel semanticModel) {
