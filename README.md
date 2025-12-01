@@ -1,5 +1,12 @@
 # WSO2 Micro Integrator module generator SDK for Ballerina
 
+[![Build](https://github.com/wso2-extensions/ballerina-module-wso2-mi/actions/workflows/build-timestamped-master.yml/badge.svg)](https://github.com/wso2-extensions/ballerina-module-wso2-mi/actions/workflows/build-timestamped-master.yml)
+[![codecov](https://codecov.io/gh/wso2-extensions/ballerina-module-wso2-mi/branch/main/graph/badge.svg)](https://codecov.io/gh/wso2-extensions/ballerina-module-wso2-mi)
+[![Trivy](https://github.com/wso2-extensions/ballerina-module-wso2-mi/actions/workflows/trivy-scan.yml/badge.svg)](https://github.com/wso2-extensions/ballerina-module-wso2-mi/actions/workflows/trivy-scan.yml)
+[![GraalVM Check](https://github.com/wso2-extensions/ballerina-module-wso2-mi/actions/workflows/build-with-bal-test-graalvm.yml/badge.svg)](https://github.com/wso2-extensions/ballerina-module-wso2-mi/actions/workflows/build-with-bal-test-graalvm.yml)
+[![GitHub Last Commit](https://img.shields.io/github/last-commit/wso2-extensions/ballerina-module-wso2-mi.svg)](https://github.com/wso2-extensions/ballerina-module-wso2-mi/commits/main)
+[![GitHub issues](https://img.shields.io/github/issues/wso2-extensions/ballerina-module-wso2-mi.svg?label=Open%20Issues)](https://github.com/wso2-extensions/ballerina-module-wso2-mi/issues)
+
 ## Overview
 
 The WSO2 Micro Integrator module generator SDK for Ballerina enables the generation of modules that allow the WSO2 MI to run Ballerina transformations.
