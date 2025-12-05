@@ -126,7 +126,7 @@ publish.dependsOn build
 
 task downloadDependencies(type: Download) {
     src([
-            'https://repo1.maven.org/maven2/org/antlr/antlr4-runtime/4.5.1-1/antlr4-runtime-4.5.1-1.jar',
+            'https://repo1.maven.org/maven2/org/antlr/antlr4-runtime/4.7.1/antlr4-runtime-4.7.1.jar',
             'https://repo1.maven.org/maven2/com/github/jknack/handlebars/4.0.6/handlebars-4.0.6.jar'
     ])
     dest file("build")

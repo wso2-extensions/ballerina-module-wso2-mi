@@ -5,7 +5,7 @@ class = "io.ballerina.stdlib.mi.plugin.MICompilerPlugin"
 path = "../compiler-plugin/build/libs/mi-compiler-plugin-0.4.0-SNAPSHOT.jar"
 
 [[dependency]]
-path = "build/antlr4-runtime-4.5.1-1.jar"
+path = "build/antlr4-runtime-4.7.1.jar"
 
 [[dependency]]
 path = "build/handlebars-4.0.6.jar"
