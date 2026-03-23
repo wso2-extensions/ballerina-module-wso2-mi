@@ -34,6 +34,7 @@ import io.ballerina.projects.plugins.codeaction.CodeActionExecutionContext;
 import io.ballerina.projects.plugins.codeaction.CodeActionExecutionContextImpl;
 import io.ballerina.projects.plugins.codeaction.CodeActionInfo;
 import io.ballerina.projects.plugins.codeaction.DocumentEdit;
+import io.ballerina.projects.environment.Environment;
 import io.ballerina.tools.text.LinePosition;
 import io.ballerina.tools.text.LineRange;
 import org.testng.Assert;
@@ -49,6 +50,8 @@ import java.util.stream.Collectors;
 
 public class AnnotationTest {
 
+    private static final Path DISTRIBUTION_PATH = Paths.get("../", "target", "ballerina-runtime")
+            .toAbsolutePath();
     private final Gson GSON = new Gson();
     private final Path RESOURCE_PATH = Paths.get("src", "test", "resources", "ballerina", "annotation_code_action");
     private final String PROVIDER_NAME = "MI_HINT_001/wso2/mi/Add MI annotation";
@@ -61,10 +64,10 @@ public class AnnotationTest {
     public void setup() {
         filePath = RESOURCE_PATH.resolve("add_mi.bal");
         filePathNeg = RESOURCE_PATH.resolve("add_mi_neg.bal");
-        project = ProjectLoader.loadProject(filePath,
-                ProjectEnvironmentBuilder.getBuilder(EnvironmentBuilder.getBuilder().build()));
-        projectNeg = ProjectLoader.loadProject(filePathNeg,
-                ProjectEnvironmentBuilder.getBuilder(EnvironmentBuilder.getBuilder().build()));
+        Environment environment = EnvironmentBuilder.getBuilder().setBallerinaHome(DISTRIBUTION_PATH).build();
+        ProjectEnvironmentBuilder projectEnvironmentBuilder = ProjectEnvironmentBuilder.getBuilder(environment);
+        project = ProjectLoader.loadProject(filePath, projectEnvironmentBuilder);
+        projectNeg = ProjectLoader.loadProject(filePathNeg, projectEnvironmentBuilder);
     }
 
     @Test(dataProvider = "testMIAnnotationDataProvider")
