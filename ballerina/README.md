@@ -8,11 +8,7 @@ Unlike Class Mediators, Ballerina is a cloud-native programming language with bu
 
 ## Compatibility
 
-| `wso2/mi` version | Ballerina version | Java version | WSO2 MI version |
-|:-----------------:|:-----------------:|:------------:|:---------------:|
-| 0.2               |     2201.9.2      | 17           |      4.4.0      |
-| 0.3               |     2201.11.0     | 21           |      4.4.0      |
-| 0.4               |     2201.12.0     | 21           |  4.4.0, 4.5.0   |
+This module is compatible with Ballerina `2201.12.x` and above, Java 21, and WSO2 MI `4.5.0+`.
 
 ## Supported data types
 
@@ -35,12 +31,12 @@ The following Ballerina data types are supported for function parameters and ret
 
 ## Usage
 
-### Pull the `mi-module-gen` tool
+### Pull the `migen` tool
 
-First, pull the `mi-module-gen` tool which is used to create the WSO2 MI module:
+First, pull the `migen` tool which is used to create the WSO2 MI module:
 
 ```bash
-bal tool pull mi-module-gen
+bal tool pull migen
 ```
 
 ### Import the module
@@ -68,10 +64,10 @@ The Ballerina function annotated with `@mi:Operation` maps to an operation in th
 
 ### Generate the module
 
-Use the `bal mi-module-gen` command to generate the WSO2 Micro Integrator module from your Ballerina project:
+Use the `bal migen module` command to generate the WSO2 Micro Integrator module from your Ballerina project:
 
 ```bash
-bal mi-module-gen -i <path_to_ballerina_project>
+bal migen module -i <path_to_ballerina_project>
 ```
 
 The command generates the module zip in the same location.

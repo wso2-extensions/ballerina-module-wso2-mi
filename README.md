@@ -1,4 +1,4 @@
-# WSO2 Micro Integrator module generator SDK for Ballerina
+# Ballerina module for WSO2 Integrator:MI module generation
 
 [![Build](https://github.com/wso2-extensions/ballerina-module-wso2-mi/actions/workflows/build-timestamped-master.yml/badge.svg)](https://github.com/wso2-extensions/ballerina-module-wso2-mi/actions/workflows/build-timestamped-master.yml)
 [![codecov](https://codecov.io/gh/wso2-extensions/ballerina-module-wso2-mi/branch/main/graph/badge.svg)](https://codecov.io/gh/wso2-extensions/ballerina-module-wso2-mi)
@@ -17,10 +17,7 @@ modules and connectors, enabling enhanced functionality and easier connectivity 
 
 **Version compatibility**:
 
-**`wso2/mi` Connector version**|**Tool version**|**Ballerina Version**|**Java version**|**WSO2 MI version**|
-:-----:|:-----:|:-----:|:-----:|:-----:
-0.2| 0.2| 2201.10.3| 17| 4.2.0, 4.3.0
-0.3| 0.3| 2201.11.0| 21| 4.4.0
+- This module is compatible with Ballerina `2201.12.x` and above, Java 21, and WSO2 MI `4.5.0+`.
 
 There are multiple ways the WSO2 Micro Integrator module generator SDK can be executed to generate MI modules from Ballerina based on the user requirement.
 1. [Generate via the Micro Integrator VS Code Extension](#step-by-step-guide-to-building-a-wso2-mi-module-from-ballerina-with-wso2-micro-integrator-vs-code-extension)
