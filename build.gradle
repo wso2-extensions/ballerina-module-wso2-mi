@@ -73,7 +73,7 @@ subprojects {
 def moduleVersion = project.version.replace("-SNAPSHOT", "")
 
 release {
-    buildTasks = ['build']
+    buildTasks = ['buildWithoutTests']
     failOnSnapshotDependencies = true
     versionPropertyFile = 'gradle.properties'
     tagTemplate = 'v${version}'
@@ -86,6 +86,10 @@ release {
 task build {
     dependsOn ":mi-ballerina:build"
     dependsOn ":mi-tests:test"
+}
+
+task buildWithoutTests {
+    dependsOn ":mi-ballerina:build"
 }
 
 jacoco {
